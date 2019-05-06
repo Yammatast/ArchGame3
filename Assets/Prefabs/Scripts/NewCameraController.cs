@@ -17,8 +17,6 @@ public class NewCameraController : MonoBehaviour
     [SerializeField]
     private bool lookAt = true;
 
-    public Camera camera;
-
     private void LateUpdate()
     {
         Refresh();
@@ -57,10 +55,5 @@ public class NewCameraController : MonoBehaviour
     private void Update()
     {
        gameObject.transform.position = new Vector3(gameObject.transform.position.x, 0.0f, gameObject.transform.position.z);
-    }
-
-    private void Awake()
-    {
-        camera.fieldOfView = 60.0f;
     }
 }
