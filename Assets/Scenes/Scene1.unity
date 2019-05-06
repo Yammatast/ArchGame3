@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6786,7 +6786,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!135 &1312655264
 SphereCollider:
@@ -12939,9 +12939,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1312655267}
-  offsetPosition: {x: 0, y: 1, z: -1}
+  offsetPosition: {x: 0, y: 1, z: -3}
   offsetPositionSpace: 1
   lookAt: 1
+  camera: {fileID: 1825658397}
 --- !u!1001 &1828351751
 PrefabInstance:
   m_ObjectHideFlags: 0
