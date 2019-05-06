@@ -1,21 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
     public float speed;
-
+    public Text start, end;
     private Rigidbody rb;
+    int startValue = 100;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        start.text = "START";
+        end.text = "";
     }
+
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        startValue -= 1;
+        if (startValue <= 0)
+        {
+
+            start.text = "";
+        }
         /**
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -43,5 +55,16 @@ public class Controller : MonoBehaviour
         {
             transform.Rotate(0, 2, 0);
         }
+
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Finish"))
+        {
+            end.text = "YOU HAVE REACHED THE GOAL!";
+        } 
+        // if() {} om man rör vid en enemy
     }
 }
