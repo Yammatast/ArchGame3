@@ -6,7 +6,8 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public float speed;
-    public Text start, end;
+    public Text start, end, pickUpText;
+    private int countPickUps;
     private Rigidbody rb;
     int startValue = 100;
     // Start is called before the first frame update
@@ -15,6 +16,8 @@ public class Controller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         start.text = "START";
         end.text = "";
+        countPickUps = 3;
+        SetPickUpText();
     }
 
 
@@ -59,12 +62,24 @@ public class Controller : MonoBehaviour
 
     }
 
+    void SetPickUpText()
+    {
+        pickUpText.text = "Pick Ups left: " + countPickUps.ToString();
+
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Finish"))
         {
             end.text = "YOU HAVE REACHED THE GOAL!";
         } 
+        if(other.gameObject.CompareTag("Pick Up"))
+        {
+            other.gameObject.SetActive(false);
+            countPickUps -= 1;
+            SetPickUpText();
+        }
         // if() {} om man rör vid en enemy
     }
 }
