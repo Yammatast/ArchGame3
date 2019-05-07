@@ -6,8 +6,9 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public float speed;
-    public Text start, end, pickUpText;
-    private int countPickUps;
+    public Text start, end, ammoText, healthText;
+    private int ammo;
+    private int health;
     private Rigidbody rb;
     int startValue = 100;
     // Start is called before the first frame update
@@ -16,8 +17,10 @@ public class Controller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         start.text = "START";
         end.text = "";
-        countPickUps = 3;
-        SetPickUpText();
+        ammo = 5;
+        SetAmmoText();
+        health = 9;
+
     }
 
 
@@ -62,10 +65,15 @@ public class Controller : MonoBehaviour
 
     }
 
-    void SetPickUpText()
+    void SetAmmoText()
     {
-        pickUpText.text = "Pick Ups left: " + countPickUps.ToString();
+        ammoText.text = "Ammo left: " + ammo.ToString();
 
+    }
+
+    void SetHealthText()
+    {
+        healthText.text = "Health left: " + health.ToString();
     }
 
     void OnTriggerEnter(Collider other)
@@ -77,9 +85,12 @@ public class Controller : MonoBehaviour
         if(other.gameObject.CompareTag("Pick Up"))
         {
             other.gameObject.SetActive(false);
-            countPickUps -= 1;
-            SetPickUpText();
+            ammo += 5;
+            SetAmmoText();
         }
-        // if() {} om man rör vid en enemy
+        if(other.gameObject.CompareTag("Enemy")) {
+            health -= 1;
+            SetHealthText();
+        }
     }
 }
