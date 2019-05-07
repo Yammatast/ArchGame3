@@ -378,7 +378,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1931324583949736, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_Name
-      value: MachineGunRobot (11)
+      value: MachineGunRobot 4
       objectReference: {fileID: 0}
     - target: {fileID: 4934111147742088, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -692,7 +692,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1931324583949736, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_Name
-      value: MachineGunRobot (12)
+      value: MachineGunRobot 5
       objectReference: {fileID: 0}
     - target: {fileID: 4934111147742088, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -789,7 +789,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1931324583949736, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_Name
-      value: MachineGunRobot (15)
+      value: MachineGunRobot 8
       objectReference: {fileID: 0}
     - target: {fileID: 4934111147742088, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1097,7 +1097,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1931324583949736, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_Name
-      value: MachineGunRobot (9)
+      value: MachineGunRobot 2
       objectReference: {fileID: 0}
     - target: {fileID: 4934111147742088, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12777,7 +12777,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426428015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.39443, y: 0.47842598, z: 44.58036}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13080,7 +13080,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1931324583949736, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_Name
-      value: MachineGunRobot (14)
+      value: MachineGunRobot 7
       objectReference: {fileID: 0}
     - target: {fileID: 4934111147742088, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14239,7 +14239,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1931324583949736, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_Name
-      value: MachineGunRobot (10)
+      value: MachineGunRobot 3
       objectReference: {fileID: 0}
     - target: {fileID: 4934111147742088, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14907,7 +14907,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1931324583949736, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_Name
-      value: MachineGunRobot (13)
+      value: MachineGunRobot 6
       objectReference: {fileID: 0}
     - target: {fileID: 4934111147742088, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15061,7 +15061,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1931324583949736, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_Name
-      value: MachineGunRobot (8)
+      value: MachineGunRobot 1
       objectReference: {fileID: 0}
     - target: {fileID: 4934111147742088, guid: 9c49b9c1648647e47be8167f82a5f87e, type: 3}
       propertyPath: m_LocalPosition.x
