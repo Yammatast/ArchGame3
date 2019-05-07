@@ -4926,7 +4926,7 @@ ParticleSystem:
 --- !u!199 &199619552024104812
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9696,7 +9696,7 @@ ParticleSystem:
 --- !u!199 &199018714407724418
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10001,7 +10001,8 @@ GameObject:
   - component: {fileID: 4934111147742088}
   - component: {fileID: 1030314002796308903}
   - component: {fileID: -1405826154320321121}
-  - component: {fileID: 1992123898037908969}
+  - component: {fileID: 250620742038027977}
+  - component: {fileID: -5859369885840083612}
   m_Layer: 0
   m_Name: MachineGunRobot
   m_TagString: Untagged
@@ -10038,10 +10039,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 4
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!195 &-1405826154320321121
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10051,20 +10052,34 @@ NavMeshAgent:
   m_GameObject: {fileID: 1931324583949736}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 2.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 20
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 3.5
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1992123898037908969
+--- !u!136 &250620742038027977
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931324583949736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 4.8
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.5, z: -0.5}
+--- !u!114 &-5859369885840083612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10073,6 +10088,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1931324583949736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26da5a7d95690644bb338a3c34c71ac8, type: 3}
+  m_Script: {fileID: 11500000, guid: d6f2144d9b2087e4580d1de60ddc6ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
