@@ -6,8 +6,11 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public float speed;
-    public Text start, end;
+    public Text start, end, ammoText, healthText;
+    private int ammo;
+    private int health;
     private Rigidbody rb;
+    private bool gameEnded;
     int startValue = 100;
     // Start is called before the first frame update
     void Start()
@@ -15,13 +18,20 @@ public class Controller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         start.text = "START";
         end.text = "";
+        ammo = 5;
+        SetAmmoText();
+        health = 9;
+        gameEnded = false;
+
     }
 
 
 
     // Update is called once per frame
+    [System.Obsolete]
     void FixedUpdate()
     {
+
         startValue -= 1;
         if (startValue <= 0)
         {
@@ -36,35 +46,71 @@ public class Controller : MonoBehaviour
 
         rb.AddForce(movement * speed);
         */
-        if (Input.GetKey (KeyCode.W))
+
+        if(!gameEnded)
         {
-            transform.position += transform.forward * speed;
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.position += transform.forward * speed;
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.position -= transform.forward * speed;
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Rotate(0, -2, 0);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Rotate(0, 2, 0);
+            }
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.K))
         {
-            transform.position -= transform.forward * speed;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(0, -2, 0);
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(0, 2, 0);
+            Application.LoadLevel(0);
         }
 
 
+
+    }
+
+    void SetAmmoText()
+    {
+        ammoText.text = "Ammo left: " + ammo.ToString();
+
+    }
+
+    void SetHealthText()
+    {
+        healthText.text = "Health left: " + health.ToString();
     }
 
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Finish"))
         {
-            end.text = "YOU HAVE REACHED THE GOAL!";
+            end.text = "YOU HAVE REACHED THE GOAL!\n PRESS 'K' TO RESTART";
+            gameEnded = true;
         } 
-        // if() {} om man rör vid en enemy
+        if(other.gameObject.CompareTag("Pick Up"))
+        {
+            other.gameObject.SetActive(false);
+            ammo += 5;
+            SetAmmoText();
+        }
+        if(other.gameObject.CompareTag("Enemy")) {
+            health -= 1;
+            SetHealthText();
+            if (health == 0)
+            {
+                end.text = "  YOU HAVE LOST\n PRESS 'K' TO RESTART";
+                gameEnded = true;
+            }
+        }
     }
 }
