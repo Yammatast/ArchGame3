@@ -314,8 +314,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 70}
-  m_SizeDelta: {x: 600, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 30}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &91480411
 MonoBehaviour:
@@ -7357,7 +7357,7 @@ MonoBehaviour:
   speed: 0.4
   start: {fileID: 766244610}
   end: {fileID: 91480411}
-  ammoText: {fileID: 2061131348}
+  pickUpText: {fileID: 2061131348}
   healthText: {fileID: 1027152536}
 --- !u!54 &1312655263
 Rigidbody:

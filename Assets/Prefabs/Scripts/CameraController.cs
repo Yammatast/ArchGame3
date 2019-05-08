@@ -14,14 +14,8 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    [System.Obsolete]
     void LateUpdate()
     {
         transform.position = player.transform.position + offset;
-
-        if (Input.GetKey(KeyCode.K))
-        {
-            Application.LoadLevel(0);
-        }
     }
 }
