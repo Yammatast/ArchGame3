@@ -31,7 +31,12 @@ public class playerShooting : MonoBehaviour
 
         if (Input.GetButton("Fire1") && timer >= timeBewteenBullets)
         {
-            Shoot();
+            if(Controller.ammo > 0)
+            {
+                Shoot();
+                Controller.ammo = Controller.ammo -= 1;
+            }
+           
         }
 
         if (timer >= timeBewteenBullets * effectDisplayTime)
@@ -59,7 +64,7 @@ public class playerShooting : MonoBehaviour
         shootRay.origin = transform.position;
         shootRay.direction = transform.forward;
 
-        if(Physics.Raycast (shootRay, out shootHit, range))
+        if (Physics.Raycast (shootRay, out shootHit, range))
         {
             EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
             if(enemyHealth != null)
@@ -67,6 +72,8 @@ public class playerShooting : MonoBehaviour
                enemyHealth.TakeDamage(damagePerShot, shootHit.point);
             }
             gunLine.SetPosition(1, shootHit.point);
+
+            
         }
         else
         {

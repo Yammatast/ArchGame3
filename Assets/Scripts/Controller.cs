@@ -15,10 +15,11 @@ public class Controller : MonoBehaviour
     public float speed;
     public Text start, end, ammoText, healthText;
     private Rigidbody rb;
-    private int ammo;
     private int health;
     private bool gameEnded;
     int startValue = 100;
+
+    public static int ammo;
 
     AudioSource dmgTaken; 
     // Start is called before the first frame update
@@ -28,7 +29,7 @@ public class Controller : MonoBehaviour
         start.text = "START";
         end.text = "";
         ammo = 5;
-        SetAmmoText();
+        //SetAmmoText();
         health = 9;
         SetHealthText();
         gameEnded = false;
@@ -80,6 +81,19 @@ public class Controller : MonoBehaviour
         if(Input.GetKey(KeyCode.K))
         {
             Application.LoadLevel(0);
+        }
+
+    }
+
+    void Update()
+    {
+        if (ammo <= 0)
+        {
+            ammoText.text = "Ammo left: 0";
+        }
+        else
+        {
+            SetAmmoText();
         }
 
     }
